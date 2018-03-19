@@ -14,7 +14,6 @@ boolean initVerify;
 Hl69 mySensor;
 Message msg;
 int cmptSeconde = 0;
-int result = 0;
 int oldResult = 0;
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -29,12 +28,6 @@ void setup() {
 // the loop function runs over and over again until power down or reset
 void loop() {
 	if (initVerify = true) {
-		int result = mySensor.sensorValue();
-		Message msg = Message();
-		//msg.encodeAndSendOneMessage('v', DEV_NUMBER, result);
-		//Serial.print("Value is : ");
-		//Serial.println(result);
-
 	}
 	
 }
@@ -51,11 +44,13 @@ void Interrupt()
 		msg.encodeAndSendOneMessage('c', DEV_NUMBER, Coretemperature);
 		Serial.println("Core temperature send");
 	}
-	result = mySensor.sensorValue();
-	if (result != oldResult) {
-		oldResult = result;
+	
+	int result = mySensor.sensorValue();
+	int percent = mySensor.calculatePercentageOfValue(result);
+	if (percent != oldResult) {
+		oldResult = percent;
 		Message msg = Message();
-		msg.encodeAndSendOneMessage('v', DEV_NUMBER, result);
+		msg.encodeAndSendOneMessage('v', DEV_NUMBER, percent);
 		Serial.println("Value of sensor send");
 	}
 }

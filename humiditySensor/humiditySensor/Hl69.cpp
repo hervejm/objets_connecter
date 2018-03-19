@@ -30,4 +30,14 @@
 		return (int)1023 - value;
 	}
 
+	double Hl69::calculatePercentageOfValue(int val)
+	{
+		double percentValue = (val * 100) / VAL_MAX_SENSOR;
+		if(percentValue > 100) //Plafond car marge erreur capeur....
+		{
+			percentValue = 100;
+		}
+		return percentValue;
+	}
+
 
