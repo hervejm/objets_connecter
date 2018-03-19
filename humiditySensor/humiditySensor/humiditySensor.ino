@@ -47,11 +47,12 @@ void Interrupt()
 	
 	int result = mySensor.sensorValue();
 	int percent = mySensor.calculatePercentageOfValue(result);
-	if (percent != oldResult) {
+	if (percent < oldResult-3 || percent > oldResult+3) {
 		oldResult = percent;
 		Message msg = Message();
 		msg.encodeAndSendOneMessage('v', DEV_NUMBER, percent);
-		Serial.println("Value of sensor send");
+		Serial.print("Value of sensor send :");
+		Serial.println(percent);
 	}
 }
 
