@@ -7,28 +7,56 @@
 #include "CoreTemp.h"
 #include <Arduino.h>
 #include "Message.h"
+#include "MsTimer2.h"
+#include "sensorID.h"
 
 boolean initVerify;
 Hl69 mySensor;
-CoreTemp coreDegree;
+Message msg;
+int cmptSeconde = 0;
+int result = 0;
+int oldResult = 0;
 // the setup function runs once when you press reset or power the board
 void setup() {
 	mySensor = Hl69();
-	coreDegree = CoreTemp();
 	initVerify = mySensor.initSensor();
+	msg = Message();
+	msg.transmitterInit();
+	MsTimer2::set(1000, Interrupt);
+	MsTimer2::start();
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
 	if (initVerify = true) {
 		int result = mySensor.sensorValue();
-		Serial.print("Value is : ");
-		Serial.println(result);
-		double Coretemperature;
-		Coretemperature = coreDegree.GetTemp();
-		
-		//Serial.print("Core temp : ");
-		//Serial.println(Coretemperature);
+		Message msg = Message();
+		//msg.encodeAndSendOneMessage('v', DEV_NUMBER, result);
+		//Serial.print("Value is : ");
+		//Serial.println(result);
+
 	}
 	
 }
+
+void Interrupt()
+{
+	cmptSeconde++;
+	if (cmptSeconde == 60) {
+		cmptSeconde = 0;
+		CoreTemp coreDegree = CoreTemp();
+		double Coretemperature;
+		Coretemperature = coreDegree.GetTemp();
+		Message msg = Message();
+		msg.encodeAndSendOneMessage('c', DEV_NUMBER, Coretemperature);
+		Serial.println("Core temperature send");
+	}
+	result = mySensor.sensorValue();
+	if (result != oldResult) {
+		oldResult = result;
+		Message msg = Message();
+		msg.encodeAndSendOneMessage('v', DEV_NUMBER, result);
+		Serial.println("Value of sensor send");
+	}
+}
+

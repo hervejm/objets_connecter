@@ -4,8 +4,9 @@ class Message
 {
 public:
 	Message();
-	void encodeAndSendMessage(int value, int idExt);
+	void encodeAndSendOneMessage(const char type, int sensorID, double data);
 	int calculatePayloadLenght(int value);
 	void choseTxAndRxPipe(void);
+	void transmitterInit();
 }; 
 

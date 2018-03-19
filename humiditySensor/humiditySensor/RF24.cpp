@@ -1632,10 +1632,3 @@ void SPIClass::setClockDivider(uint8_t rate){}
 
 
 #endif
-
-class RF24
-{
-public:
-	RF24();
-	~RF24();
-};

@@ -30,6 +30,24 @@
     <ClInclude Include="CoreTemp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RF24.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RF24_config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nRF24L01.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="printf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sensorID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MsTimer2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Hl69.cpp">
@@ -39,6 +57,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CoreTemp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RF24.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MsTimer2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

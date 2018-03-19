@@ -15,4 +15,7 @@ C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\h
  C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\Hl69.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
  C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\CoreTemp.h \
+ C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\Message.h \
+ C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\MsTimer2.h \
+ C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\sensorID.h \
  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2017\Community\Common7\IDE\Extensions\kuedxvg2.nmj\Micro\ Platforms\default\debuggers\VM_DBG/VM_DBG.h
