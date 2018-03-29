@@ -56,13 +56,13 @@
     <ClCompile Include="Message.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CoreTemp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RF24.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MsTimer2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreTemp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

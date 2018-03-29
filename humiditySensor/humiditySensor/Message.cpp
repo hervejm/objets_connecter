@@ -41,7 +41,7 @@ void Message::transmitterInit()
 	transmitter.printDetails();
 }
 
-void Message::encodeAndSendOneMessage(const char type,int sensorID, double data)
+void Message::encodeAndSendOneMessage(const char type,int sensorID, int data)
 {
 	if(type == 'v')
 	{
@@ -59,6 +59,12 @@ void Message::encodeAndSendOneMessage(const char type,int sensorID, double data)
 	{
 		char payload[32];
 		sprintf(payload, "%s/%02d;%d", BOARD_TEMP, sensorID, data);
+		if (!transmitter.testCarrier()) {
+			// send payload
+			transmitter.stopListening();
+			transmitter.write((void *)payload, strlen(payload) + 1);
+			transmitter.startListening();
+		}
 	}
 
 }

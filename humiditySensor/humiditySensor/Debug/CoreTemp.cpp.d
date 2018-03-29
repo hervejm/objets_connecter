@@ -1,6 +1,5 @@
 C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\CoreTemp.cpp.o: \
  C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\CoreTemp.cpp \
- C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\CoreTemp.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/binary.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/WCharacter.h \
@@ -12,4 +11,5 @@ C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\C
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/USBAPI.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs/pins_arduino.h \
- C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs/../standard/pins_arduino.h
+ C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs/../standard/pins_arduino.h \
+ C:\Users\j-m83\AppData\Local\Temp\VMBuilds\humiditySensor\nano_atmega328\Debug\CoreTemp.h

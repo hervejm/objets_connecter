@@ -35,14 +35,15 @@ void loop() {
 void Interrupt()
 {
 	cmptSeconde++;
-	if (cmptSeconde == 60) {
+	if (cmptSeconde == 10) {
 		cmptSeconde = 0;
-		CoreTemp coreDegree = CoreTemp();
+		CoreTemp core = CoreTemp();
 		double Coretemperature;
-		Coretemperature = coreDegree.GetTemp();
+		Coretemperature = core.GetTemp();
 		Message msg = Message();
 		msg.encodeAndSendOneMessage('c', DEV_NUMBER, Coretemperature);
-		Serial.println("Core temperature send");
+		Serial.print("Core temperature send : ");
+		Serial.println(Coretemperature)
 	}
 	
 	int result = mySensor.sensorValue();
