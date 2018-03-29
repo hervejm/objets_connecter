@@ -13,6 +13,7 @@
 boolean initVerify;
 Hl69 mySensor;
 Message msg;
+CoreTemp core;
 int cmptSeconde = 0;
 int oldResult = 0;
 // the setup function runs once when you press reset or power the board
@@ -23,6 +24,7 @@ void setup() {
 	msg.transmitterInit();
 	MsTimer2::set(1000, Interrupt);
 	MsTimer2::start();
+	core = CoreTemp();
 }
 
 // the loop function runs over and over again until power down or reset
@@ -37,13 +39,12 @@ void Interrupt()
 	cmptSeconde++;
 	if (cmptSeconde == 10) {
 		cmptSeconde = 0;
-		CoreTemp core = CoreTemp();
 		double Coretemperature;
 		Coretemperature = core.GetTemp();
 		Message msg = Message();
 		msg.encodeAndSendOneMessage('c', DEV_NUMBER, Coretemperature);
 		Serial.print("Core temperature send : ");
-		Serial.println(Coretemperature)
+		Serial.println(Coretemperature);
 	}
 	
 	int result = mySensor.sensorValue();
