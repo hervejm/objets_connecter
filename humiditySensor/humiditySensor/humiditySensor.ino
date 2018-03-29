@@ -37,7 +37,7 @@ void loop() {
 void Interrupt()
 {
 	cmptSeconde++;
-	if (cmptSeconde == 10) {
+	if (cmptSeconde == 60) {
 		cmptSeconde = 0;
 		double Coretemperature;
 		Coretemperature = core.GetTemp();
