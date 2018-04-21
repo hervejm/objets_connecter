@@ -15,6 +15,7 @@ Hl69 mySensor;
 Message msg;
 CoreTemp core;
 int cmptSeconde = 0;
+int cmptSecondeForSensor = 0;
 int oldResult = 0;
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -37,6 +38,7 @@ void loop() {
 void Interrupt()
 {
 	cmptSeconde++;
+	cmptSecondeForSensor++;
 	if (cmptSeconde == (10*60)) {
 		cmptSeconde = 0;
 		double Coretemperature;
@@ -49,7 +51,8 @@ void Interrupt()
 	
 	int result = mySensor.sensorValue();
 	int percent = mySensor.calculatePercentageOfValue(result);
-	if (percent < oldResult-3 || percent > oldResult+3) {
+	if ((percent < oldResult-3 || percent > oldResult+3) || cmptSecondeForSensor == 60) {
+		cmptSecondeForSensor = 0;
 		oldResult = percent;
 		Message msg = Message();
 		msg.encodeAndSendOneMessage('v', DEV_NUMBER, percent);

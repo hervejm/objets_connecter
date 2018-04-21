@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>607</width>
+    <height>463</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <widget class="QGroupBox" name="groupBoxHost">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>221</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>MQTT broker</string>
+   </property>
+   <widget class="QLineEdit" name="lineEdithost">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>201</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>192.168.0.35</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButtonConnect">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>151</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connect</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QTextEdit" name="textEditMessage">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>20</y>
+     <width>351</width>
+     <height>101</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="debug_label">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>0</y>
+     <width>91</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Debug Console</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="coreTempNumber">
+   <property name="geometry">
+    <rect>
+     <x>-60</x>
+     <y>370</y>
+     <width>201</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>231</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img_for_app/img_thermo.qrc">:/images.jpeg</pixmap>
+   </property>
+  </widget>
+  <zorder>groupBoxHost</zorder>
+  <zorder>textEditMessage</zorder>
+  <zorder>debug_label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>coreTempNumber</zorder>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="img_for_app/img_thermo.qrc"/>
+ </resources>
+ <connections/>
+</ui>
